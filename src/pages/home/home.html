@@ -1,0 +1,35 @@
+<ion-content fullscreen>
+  <ion-row>
+    <ion-col>
+      <h1 text-center>Brain-Sum</h1>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <h3 text-center>Target : {{numberToGet}}</h3>
+    </ion-col>
+    <ion-col>
+      <h3 text-center>Obtained : {{totalNumber}}</h3>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <h3>Score : {{totalScore}}</h3>
+    </ion-col>
+    <ion-col>
+      <h3>Time : {{time}}</h3>
+    </ion-col>
+    <ion-col>
+      <h3>Best : {{best}}</h3>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-grid>
+      <ion-row >
+      <ion-col col-3 *ngFor="let i of secretNumbers">
+        <button ion-button color="dark" (click)="onNumberClick(i)">{{i}}</button>
+      </ion-col>
+    </ion-row>  
+    </ion-grid>
+  </ion-row>
+</ion-content>
