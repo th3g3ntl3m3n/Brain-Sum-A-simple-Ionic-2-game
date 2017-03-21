@@ -37,7 +37,7 @@ export class HomePage {
       alert("You won");
       this.resetScoreBoard();
       this.totalScore += 1;
-    } else if(this.totalNumber >= this.numberToGet){
+    } else if(this.totalNumber > this.numberToGet){
       alert("You Lose");
       this.resetScoreBoard();
       this.totalScore -= 1;
