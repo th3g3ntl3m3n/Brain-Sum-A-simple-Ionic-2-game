@@ -14,20 +14,20 @@
   </ion-row>
   <ion-row>
     <ion-col>
-      <h3>Score : {{totalScore}}</h3>
+      <h3 text-center>Score : {{totalScore}}</h3>
     </ion-col>
     <ion-col>
-      <h3>Time : {{time}}</h3>
+      <h3 text-center>Time : {{time}}</h3>
     </ion-col>
     <ion-col>
-      <h3>Best : {{best}}</h3>
+      <h3 text-center>Best : {{best}}</h3>
     </ion-col>
   </ion-row>
   <ion-row>
     <ion-grid>
       <ion-row >
       <ion-col col-3 *ngFor="let i of secretNumbers">
-        <button ion-button color="dark" (click)="onNumberClick(i)">{{i}}</button>
+        <button class="center" ion-button (click)="onNumberClick(i)">{{i}}</button>
       </ion-col>
     </ion-row>  
     </ion-grid>

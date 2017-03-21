@@ -13,18 +13,18 @@ export class HomePage {
   totalNumber : number= 0;
   totalScore : number = 0;
   best : number = 0;
-  time : number =0;
+  time : number = 0;
 
   constructor(public navCtrl: NavController) {
     this.generateNumbers();
     this.numberToGet = Math.floor(Math.random()*100) + 1;
-    setInterval(()=>{
-      return this.time += 1;
-    }, 1000);
+    // setInterval(()=>{
+    //   return this.time += 1;
+    // }, 1000);
   }
 
   generateNumbers() {
-    for(let i=0;i<30;i++){
+    for(let i=0;i<20;i++){
       this.secretNumbers.push(Math.floor(Math.random() * 50) + 1);
     }
     console.log(this.secretNumbers);
@@ -41,17 +41,19 @@ export class HomePage {
       alert("You Lose");
       this.resetScoreBoard();
       this.totalScore -= 1;
+      this.best = 0;
     }
   }
   resetScoreBoard() {
-      let temp = this.time;
-      this.best = Math.min(temp, this.best);  
+      let temp  = this.time;
+      this.best = Math.min(temp,(this.best === 0 ? 1000 : this.best)); 
+      console.log(this.best, temp); 
       this.numberToGet = Math.floor(Math.random()*100) + 1;
       // this.totalScore += 1;
       this.totalNumber = 0;
       this.secretNumbers = [];
       this.generateNumbers();
-      this.best = 0;
+      // this.best = 0;
       this.time = 0;
   }
 }
